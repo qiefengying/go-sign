@@ -29,12 +29,7 @@ func NewGoVerifier() *GoVerifier {
 
 // ParseQuery 将参数字符串解析成参数列表
 func (slf *GoVerifier) ParseQuery(requestUri string) error {
-	requestQuery := ""
-	idx := strings.Index(requestUri, "?")
-	if idx > 0 {
-		requestQuery = requestUri[idx+1:]
-	}
-	query, err := url.ParseQuery(requestQuery)
+	query, err := url.ParseQuery(requestUri)
 	if nil != err {
 		return err
 	}
