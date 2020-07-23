@@ -132,3 +132,8 @@ func (slf *GoVerifier) GetBody() url.Values {
 	}
 	return out
 }
+
+
+func (slf *GoVerifier) GetTimeout() time.Duration {
+	return slf.timeout
+}
